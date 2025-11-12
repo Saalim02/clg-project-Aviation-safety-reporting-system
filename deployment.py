@@ -279,11 +279,6 @@ with notes_col1:
     st.subheader("Training samples")
     st.table(pd.DataFrame(TRAIN_SAMPLES, columns=["text","type","severity"]))
 
-with notes_col2:
-    st.subheader("Notes & Next steps")
-    st.markdown("- Training dataset is toy-sized — expand for realistic performance")
-    st.markdown("- Consider saving trained pipelines with joblib to avoid retrain on start")
-    st.markdown("- Use a backend (FastAPI) for high-frequency real-time streaming")
 
 # Export CSV
 st.markdown("---")
@@ -296,3 +291,4 @@ if st.button("Download all session reports as CSV"):
     })
     csv = df.to_csv(index=False)
     st.download_button("Download CSV", csv, file_name="asrs_reports.csv")
+
